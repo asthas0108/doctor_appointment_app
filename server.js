@@ -2,8 +2,11 @@ const express = require("express");
 const colors = require("colors");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
+const connectDB = require("./config/db.js");
 
 dotenv.config();
+
+connectDB();
 
 const app = express();
 
