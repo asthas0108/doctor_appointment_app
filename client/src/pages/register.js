@@ -34,7 +34,7 @@ const register = () => {
           </Link>
 
           <button className="btn btn-primary" type="submit">
-            REGISTER
+            Register
           </button>
         </Form>
       </div>
