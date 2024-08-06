@@ -9,6 +9,6 @@ app.post("/login", loginController);
 
 app.post("/register", registerController);
 
-app.post("//getUserData", authMiddleware,authController);
+app.post("/getUserData", authMiddleware,authController);
 
 module.exports = app;
