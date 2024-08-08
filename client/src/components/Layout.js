@@ -3,7 +3,7 @@ import "../styles/LayoutStyles.css";
 import { userMenu, adminMenu } from "./../Data/data";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
-import {message} from "antd";
+import {message, Badge} from "antd";
 
 const Layout = ({ children }) => {
   const { user } = useSelector(state => state.user) || {};
@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
               {SidebarMenu.map((menu) => {
                 const isActive = location.pathname === menu.path;
                 return (
-                  <div key={menu.path} className={`menu-item ${isActive && "active"}`}>
+                  <div className={`menu-item ${isActive && "active"}`}>
                     <i className={menu.icon}></i>
                     <Link to={menu.path}>{menu.name}</Link>
                   </div>
@@ -46,8 +46,11 @@ const Layout = ({ children }) => {
           </div>
           <div className="content">
             <div className="header">
-              <div className="header-content">
+              <div className="header-content" style={{cursor:'pointer'}}>
+                <Badge count={user && user.notification.length} onClick={()=>{navigate("/notification")}}>
                 <i className="fa-solid fa-bell"></i>
+                </Badge>
+                
                 <Link to="/profile">{user && user.name ? user.name : "Guest"}</Link>
               </div>
             </div>

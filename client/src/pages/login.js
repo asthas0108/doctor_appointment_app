@@ -19,6 +19,7 @@ const Login = () => {
           'Content-Type': 'application/json'
         }
       });
+      window.location.reload();
       dispatch(hideLoading());
 
       if (res.data.success) {
