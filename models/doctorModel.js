@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
 const doctorSchema = new mongoose.Schema({
+    userId:{
+        type:String,
+    },
     firstName:{
         type:String,
         required:[true,"First Name is required"],
@@ -40,7 +43,7 @@ const doctorSchema = new mongoose.Schema({
         type:String,
         default:"pending",
     },
-    timing:{
+    timings:{
         type:Object,
         required:[true,"timing is required"],
     },

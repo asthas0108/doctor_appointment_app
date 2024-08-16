@@ -17,6 +17,8 @@ app.use("/api/v1/user", require("./routes/userRoute.js"));
 
 app.use("/api/v1/admin", require("./routes/adminRoute.js"));
 
+app.use("/api/v1/doctor", require("./routes/doctorRoute.js"));
+
 const port = process.env.PORT || 8080;
 
 app.listen(port, () => {
